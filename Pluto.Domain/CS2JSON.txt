@@ -1,0 +1,330 @@
+﻿public class ThemePark   
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Lot> Lots { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public string UpdatedBy { get; set; }
+
+        public DateTime UpdatedDate { get; set; }
+
+        public ThemePark()
+        {
+            this.Lots = new List<Lot>();
+            this.Lots.Add(new Lot
+            {
+                CreatedBy = "Postman",
+                CreatedDate = DateTime.Now,
+                Name = "Heroes"
+            });
+
+            this.Lots[0].Rows = new List<Row>();
+            this.Lots[0].Rows.Add(new Row
+            {
+                Name = "Heroes-10",
+                Available = 10,
+                Active = true,
+                Occupied = 0,
+                CreatedBy = "Postman",
+                CreatedDate = DateTime.Now
+            });
+        }
+    }
+
+public class Lot
+    {
+        public int Id { get; set; }
+        
+        public string Name { get; set; }
+
+        public List<Row> Rows { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public string UpdatedBy { get; set; }
+
+        public DateTime UpdatedDate { get; set; }
+
+        public Lot()
+        {
+            this.CreatedBy = "Postman";
+            this.CreatedDate = DateTime.Now;
+
+            this.Name = "Villians";
+            this.Rows = new List<Row>();
+            this.Rows.Add(
+                new Row {
+                    Name = "Villians-10",
+                    CreatedBy = "Postman",
+                    CreatedDate = DateTime.Now,
+                    Active = true,
+                    Available = 10,
+                    LotId = 1,
+                    Occupied = 0
+                });
+        }
+    }
+
+public class Row
+    {
+        public int Id { get; set; }
+        public int LotId { get; set; }
+        public string Name { get; set; }
+        public int Available { get; set; }
+        public int Occupied { get; set; }
+        public bool Active { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public DateTime UpdatedDate { get; set; }
+
+        public Row()
+        {
+            
+        }
+    }
+
+-- JSON Conversion for Themepark
+{
+  "id": 1,
+  "name": null,
+  "lots": [
+    {
+      "id": 0,
+      "name": "Heroes",
+      "rows": [
+        {
+          "id": 0,
+          "lotId": 0,
+          "name": "Heroes-10",
+          "available": 10,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "id": 0,
+          "lotId": 0,
+          "name": "Heroes-20",
+          "available": 20,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "id": 0,
+          "lotId": 0,
+          "name": "Heroes-30",
+          "available": 30,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        }
+      ],
+      "createdBy": "Postman",
+      "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+      "updatedBy": null,
+      "updatedDate": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 0,
+      "name": "Villians"
+      "rows": [
+        {
+          "id": 0,
+          "lotId": 0,
+          "name": "Villians-10",
+          "available": 10,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "id": 0,
+          "lotId": 0,
+          "name": ""Villians-20",
+          "available": 20,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "id": 0,
+          "lotId": 0,
+          "name": ""Villians-30",
+          "available": 30,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        }
+      ],
+      "createdBy": "Postman",
+      "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+      "updatedBy": null,
+      "updatedDate": "0001-01-01T00:00:00"
+    },
+  ],
+  "createdBy": "",
+  "createdDate": "",
+  "updatedBy": "Postman",
+  "updatedDate": "2020-09-04T14:13:44.7826282+00:00"
+}
+
+-- JSON Conversion for Lot
+
+{
+  "id": 0,
+  "name": "Villians",
+  "rows": [
+    {
+      "id": 0,
+      "lotId": 1,
+      "name": "Villians-10",
+      "available": 10,
+      "occupied": 0,
+      "active": true,
+      "createdBy": "Postman",
+      "createdDate": "2020-09-04T14:13:44.8138933+00:00",
+      "updatedBy": null,
+      "updatedDate": "0001-01-01T00:00:00"
+    }
+  ],
+  "createdBy": "Postman",
+  "createdDate": "2020-09-04T14:13:44.8138933+00:00",
+  "updatedBy": null,
+  "updatedDate": "0001-01-01T00:00:00"
+}
+
+-- JSON Conversion for Row
+
+{
+  "id": 0,
+  "lotId": 0,
+  "name": null,
+  "available": 0,
+  "occupied": 0,
+  "active": false,
+  "createdBy": null,
+  "createdDate": "0001-01-01T00:00:00",
+  "updatedBy": null,
+  "updatedDate": "0001-01-01T00:00:00"
+}
+
+-- More refactoring, missing Lot.Id and Lot.LotId in rows collection
+{
+  "lots": [
+    {
+      "themeparkId" : 1,
+      "name": "Heroes",
+      "rows": [
+        {
+          "lotId": null,
+          "name": "Heroes-10",
+          "available": 10,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "name": "Heroes-20",
+          "available": 20,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "name": "Heroes-30",
+          "available": 30,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        }
+      ],
+      "createdBy": "Postman",
+      "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+      "updatedBy": null,
+      "updatedDate": "0001-01-01T00:00:00"
+    },
+    {
+      "id": null,
+      "name": "Villians",
+      "rows": [
+        {
+          "id": null,
+          "lotId": null,
+          "name": "Villians-10",
+          "available": 10,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "id": null,
+          "lotId": null,
+          "name": "Villians-20",
+          "available": 20,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        },
+        {
+          "id": null,
+          "lotId": null,
+          "name": "Villians-30",
+          "available": 30,
+          "occupied": 0,
+          "active": true,
+          "createdBy": "Postman",
+          "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+          "updatedBy": null,
+          "updatedDate": "0001-01-01T00:00:00"
+        }
+      ],
+      "createdBy": "Postman",
+      "createdDate": "2020-09-04T14:13:44.7826282+00:00",
+      "updatedBy": null,
+      "updatedDate": "0001-01-01T00:00:00"
+    }
+  ]
+}

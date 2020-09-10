@@ -1,0 +1,213 @@
+﻿using Pluto.Domain;
+using Pluto.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pluto.Harness
+{
+    internal class Program
+    {
+        private static PlutoContext plutoContext = new PlutoContext();
+        static void Main(string[] args)
+        {
+            plutoContext.Database.EnsureCreated();
+
+            GetSites("Before Site Add...");
+            AddSite();
+            GetSites("After Site Add...");
+
+            GetThemeParks("Before Theme Park Add...");
+            AddThemePark();
+            GetThemeParks("After Theme Park Add...");
+
+
+
+            Console.WriteLine("Press any key...");
+            Console.ReadKey();
+        }
+
+        private static void GetLots(string text)
+        {
+
+        }
+        
+        private static void AddLot()
+        {
+
+        }
+
+        private static void AddThemePark()
+        {
+            var mkLots = new List<Lot>();
+            mkLots.Add(
+                new Lot
+                {
+                    Name = "Villians",
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+                }
+            );
+
+            var mkRows = new List<Row>();
+            mkRows.Add(
+                new Row 
+                { 
+                    Name = "Villians - 1",
+                    Active = true,
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+                }
+            );
+
+            mkRows.Add(
+                new Row
+                {
+                    Name = "Villians - 2",
+                    Active = true,
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+                }
+            );
+
+            mkLots.Add(
+                new Lot
+                {
+                    Name = "Heroes",
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+                }
+            
+            );
+
+            var mkRows = new List<Row>();
+            mkRows.Add(
+                new Row
+                {
+                    Name = "Heroes - 1",
+                    Active = true,
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+                }
+            );
+
+            mkRows.Add(
+                new Row
+                {
+                    Name = "Heroes - 2",
+                    Active = true,
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+                }
+            );
+
+            var ecLots = new List<Lot>();
+            var ecRows = new List<Row>();
+            var dhsLots = new List<Lot>();
+            var dhsRows = new List<Row>();
+            var dakLots = new List<Lot>();
+            var dakRows = new List<Row>();
+
+            var themeParkMK = new ThemePark
+            {
+                Name = "Magic Kingdom",
+                CreatedDate = DateTime.Now,
+                CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name,
+                Lots = new List<Lot>()
+            };
+
+            var themeParkEC = new ThemePark
+            {
+                Name = "Epcot Center",
+                CreatedDate = DateTime.Now,
+                CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name,
+                Lots = new List<Lot>()
+            };
+
+            var themeParkDHS = new ThemePark
+            {
+                Name = "Disney's Hollywood Studios",
+                CreatedDate = DateTime.Now,
+                CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name,
+                Lots = new List<Lot>()
+            };
+
+            var themeParkDAK = new ThemePark
+            {
+                Name = "Disney's Animal Kingdom",
+                CreatedDate = DateTime.Now,
+                CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name,
+                Lots = new List<Lot>()
+            };
+
+            themePark.Lots.Add {
+                new Lot
+                {
+                    Name = "Journey",
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name,
+                    Rows = new List<Row>
+                    {
+                        for (int i = 0; i < 10; i++)
+                    new Row
+                    {
+                        Name = "Journey - {i}",
+                        Active = true,
+                        CreatedDate = DateTime.Now,
+                        CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name,
+                        Available = i * 20,
+                        Occupied = i * 20 - i,
+                    };
+                }
+            }
+        }
+     };
+
+        private static void GetThemeParks(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void AddSite()
+        {
+            var site = new Site
+            {
+                Name = "Walt Disney World Resort",
+                CreatedDate = DateTime.Now,
+                CreatedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name
+            };
+        }
+
+        private static void GetSites(string text)
+        {
+            var sites = plutoContext.Sites.ToList();
+            Console.WriteLine($"{ text }: Site count is {sites.Count}");
+
+            foreach (var site in sites)
+            {
+                Console.WriteLine(site.Name);
+            }
+        }
+    }
+}
+
+      /* for (int i = 0; i < 10; i++)
+            {
+                new Row { Name = "Journey - {i}" };
+            }
+
+            {
+                    new Lot
+                    {
+                        Name = "Journey",
+                         Rows = new List<Row>
+                         {
+                             
+                         }
+                    }
+                }
+            };
+           */
