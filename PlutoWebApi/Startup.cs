@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PlutoRepository;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace PlutoWebApi
 {
@@ -27,6 +28,7 @@ namespace PlutoWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddDbContext<PlutoContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("PlutoConnex"))
                     .EnableSensitiveDataLogging()
@@ -49,6 +51,8 @@ namespace PlutoWebApi
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
         }
     }
 }
