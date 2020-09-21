@@ -15,7 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoHarness", "PlutoHarnes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoRepository", "PlutoRepository\PlutoRepository.csproj", "{479E5BA8-4158-4302-B6CE-DC86A411D063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoWebApi", "PlutoWebApi\PlutoWebApi.csproj", "{BF843C78-19C5-4F5F-BEA7-5B810605CAFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoWebApi", "PlutoWebApi\PlutoWebApi.csproj", "{BF843C78-19C5-4F5F-BEA7-5B810605CAFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnoopyWebApi", "SnoopyWebApi\SnoopyWebApi.csproj", "{B5B29ED5-BE83-4D89-A159-2D5D056C1422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnoopyDomain", "SnoopyDomain\SnoopyDomain.csproj", "{309F3A34-9549-4FF9-9CCB-F9AA8B91B79C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnoopyRepository", "SnoopyRepository\SnoopyRepository.csproj", "{4BEDDE40-3194-425F-A992-C61A1D5F08C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{BF843C78-19C5-4F5F-BEA7-5B810605CAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF843C78-19C5-4F5F-BEA7-5B810605CAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF843C78-19C5-4F5F-BEA7-5B810605CAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B29ED5-BE83-4D89-A159-2D5D056C1422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B29ED5-BE83-4D89-A159-2D5D056C1422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B29ED5-BE83-4D89-A159-2D5D056C1422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B29ED5-BE83-4D89-A159-2D5D056C1422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309F3A34-9549-4FF9-9CCB-F9AA8B91B79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309F3A34-9549-4FF9-9CCB-F9AA8B91B79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309F3A34-9549-4FF9-9CCB-F9AA8B91B79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309F3A34-9549-4FF9-9CCB-F9AA8B91B79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEDDE40-3194-425F-A992-C61A1D5F08C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEDDE40-3194-425F-A992-C61A1D5F08C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEDDE40-3194-425F-A992-C61A1D5F08C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEDDE40-3194-425F-A992-C61A1D5F08C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
